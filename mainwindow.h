@@ -41,8 +41,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Registration reg;
-    QUndoStack* undoStack;
-    QShortcut* undoShortcut;
     void DataLoading();
 
     void lister();
