@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
     DataLoading();
     lister();
     saveShortcut();
+    undoShortcut();
 }
 
 void MainWindow::saveShortcut()
@@ -23,7 +24,7 @@ void MainWindow::saveShortcut()
     connect(saveSc, &QShortcut::activated, this, &MainWindow::save);
 }
 
-void MainWindow::undoShorcut()
+void MainWindow::undoShortcut()
 {
     QShortcut* undoSc = new QShortcut(QKeySequence(Qt::CTRL | Qt::Key_C), this);
     connect(undoSc, &QShortcut::activated, this, &MainWindow::undo);
