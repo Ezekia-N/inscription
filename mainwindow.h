@@ -29,7 +29,7 @@ public:
     void save();
     void saveShortcut();
     void closeShortcut();
-    void undoShorcut();
+    void undoShortcut();
     ~MainWindow();
 
 private slots:
