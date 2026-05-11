@@ -12,6 +12,8 @@
 #include <QFile>
 #include <QTextStream>
 #include <QCloseEvent>
+#include <QPointer>
+#include <QMdiSubWindow>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -24,27 +26,50 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    QPointer<QMdiSubWindow> mdiChild;
+    QString fileName, fileNameRead, fileNameWrite;
     MainWindow(QWidget *parent = nullptr);
     void closeEvent(QCloseEvent* event);
-    void save();
     void saveShortcut();
-    void closeShortcut();
     void undoShortcut();
+    void openFileShortcut();
+    void saveAsShortcut();
+    void modifyShortcut();
+    void removeShortcut();
+    void manageShow();
+    void showToolBar();
+    void viewManagement();
+    void listView();
+    void addView();
+    void searchControl();
+    void listShortcut();
+
     ~MainWindow();
 
 private slots:
-    void on_addButton_clicked();
-    void on_editButton_clicked();
-    void on_removeButton_clicked();
-    void on_saveButton_clicked();
+    void addSlot();
+    void editSlot();
+    void removeSlot();
+    void saveSlot();
+    void showMenu(const QPoint &pos);
+    void DataLoading();
+    void save();
+    void saveAs();
+    void undo();
+    void listSlot();
+
+    // void on_nextButton_clicked();
+    // void on_backButton_clicked();
 
 private:
     Ui::MainWindow *ui;
     Registration reg;
-    void DataLoading();
+    vector<Person> listPerson;
+    QAction *undoAction, *removeAction, *modifyAction, *redoAction;
+    void lister(vector<Person> listPerson);
+    QAction* listAction;
 
-    void lister();
-    void undo();
     int currentRow, currentCol;
+    int counter;
 };
 #endif // MAINWINDOW_H

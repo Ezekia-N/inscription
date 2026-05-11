@@ -21,7 +21,8 @@ vector<Person> Registration::getListePerson()
 
 void Registration::setListePerson(vector<Person> liste)
 {
-    this->liste = liste;
+    this->liste.clear();
+    this->liste.assign(liste.begin(), liste.end());
 }
 
 void Registration::modifier(QString editedString, int row, int col)
@@ -41,20 +42,24 @@ void Registration::modifier(QString editedString, int row, int col)
         default:
             break;
     }
+    historique.push_back(liste);
 }
 
-void Registration::rechercher(Person p)
+vector<Person> Registration::rechercher(QString findString)
 {
-    // vector<Person>::iterator t = find(liste.begin(), liste.end(), p);
-    // if (t != liste.end())
-    // {
-    //     qDebug() << "Recherche trouvé";
-    //     qDebug() << "==============================";
-    //     qDebug() << "Nom    : " << t->getNom();
-    //     qDebug() << "Prénom : " << t->getPrenom();
-    //     qDebug() << "Age    : " << t->getAge();
-    //     qDebug() << "==============================";
-    // }
+    vector<Person> found{};
+
+    for(const Person &p : liste)
+    {
+        if (p.getName().toLower().contains(findString.toLower())      ||
+            p.getFirstName().toLower().contains(findString.toLower()) ||
+            QString::number(p.getAge()).toLower().contains(findString.toLower()))
+        {
+            found.push_back(p);
+        }
+    }
+
+    return found;
 }
 
 void Registration::supprimer(Person p)
@@ -66,11 +71,9 @@ void Registration::supprimer(Person p)
     }
 }
 
-void Registration::lister()
+void Registration::lister(vector<Person> listOfPerson)
 {
-    qDebug() << "\nListe des étudiants inscris";
-
-    for(vector<Person>::iterator i = liste.begin(); i!=liste.end(); i++)
+    for(vector<Person>::iterator i = listOfPerson.begin(); i!=listOfPerson.end(); i++)
     {
         qDebug() << "==============================";
         qDebug() << "Nom    : " << i->getName();

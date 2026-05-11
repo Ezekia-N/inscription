@@ -15,7 +15,7 @@ class Registration
         vector<Person> getListePerson();
         void modifier(QString editedString, int row, int col);
         void supprimer(Person p);
-        void rechercher(Person p);
-        void lister();
+        vector<Person> rechercher(QString findString);
+        void lister(vector<Person> listOfPerson);
         ~Registration();
 };

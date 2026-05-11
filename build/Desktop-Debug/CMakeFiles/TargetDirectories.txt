@@ -1,0 +1,9 @@
+/home/ezekia/QTCreator/Registration/build/Desktop-Debug/CMakeFiles/Registration.dir
+/home/ezekia/QTCreator/Registration/build/Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/ezekia/QTCreator/Registration/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/ezekia/QTCreator/Registration/build/Desktop-Debug/CMakeFiles/list_install_components.dir
+/home/ezekia/QTCreator/Registration/build/Desktop-Debug/CMakeFiles/install.dir
+/home/ezekia/QTCreator/Registration/build/Desktop-Debug/CMakeFiles/install/local.dir
+/home/ezekia/QTCreator/Registration/build/Desktop-Debug/CMakeFiles/install/strip.dir
+/home/ezekia/QTCreator/Registration/build/Desktop-Debug/CMakeFiles/Registration_autogen_timestamp_deps.dir
+/home/ezekia/QTCreator/Registration/build/Desktop-Debug/CMakeFiles/Registration_autogen.dir
